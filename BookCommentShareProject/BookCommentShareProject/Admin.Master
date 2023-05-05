@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="BookCommandShareProject.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        
+        .auto-style8 {
+            margin-right: 51px;
+            margin-bottom: 0px;
+        }
+
+        .auto-style15 {
+            width: 1329px;
+        }
+        .auto-style16 {
+            width: 180px;
+            height: 225px;
+        }
+        .auto-style17 {
+            width: 100%;
+        }
+        .auto-style18 {
+            height: 24px;
+            font-size: large;
+            color: #333333;
+            background-color: #CCCCCC;
+        }
+        .auto-style19 {
+            height: 838px;
+        }
+        .auto-style20 {
+            text-decoration: none;
+        }
+        .auto-style21 {
+            color: #333333;
+        }
+    </style>
+</head>
+<body style="height: 175px; width: 1460px;">
+    <form id="form1" runat="server" class="auto-style15">
+
+        <asp:Image ID="Image1" runat="server" CssClass="auto-style8" Height="274px" Width="1330px" ImageUrl="~/images/office-background-manager-work-sketch-cartoon-character-272211.jpg" />
+
+        <div style="background-color: #C0C0C0; justify-content: flex-start; " class="auto-style19">
+            <div style="display: flex; justify-content: flex-start; height: auto; width: %100" class="auto-style7">
+
+                <div style="margin-left:5px; margin-top:10px" class="auto-style16">
+                    <table class="auto-style17" style="font-size: medium; font-family: 'Times New Roman', Times, serif; font-style: italic; font-weight: bold">
+                        <tr>
+                            <td class="auto-style18" style="font-family: 'times New Roman', Times, serif; font-style: italic;"><a href="Categories.aspx" class="auto-style20"> <span class="auto-style21">Kategoriler </span> </a></td>
+                        </tr>
+                        <tr>
+                             <td class="auto-style18" style="font-family: 'times New Roman', Times, serif; font-style: italic;"> <a href="Books.aspx" class="auto-style20"> <span class="auto-style21">Kitaplar </span> </a> </td>
+                        </tr>
+                        <tr>
+                             <td class="auto-style18" style="font-family: 'times New Roman', Times, serif; font-style: italic;"> <a href="Comments.aspx" class="auto-style20"> <span class="auto-style21">Yorumlar </span> </a> </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

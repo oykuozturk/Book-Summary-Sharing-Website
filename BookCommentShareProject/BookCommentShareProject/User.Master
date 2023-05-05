@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="BookCommandShareProject.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 43px;
+            background-color: #333333;
+        }
+
+        .auto-style5 {
+            height: 41px;
+            text-align: right;
+            font-size: large;
+        }
+
+        .auto-style8 {
+            margin-right: 51px;
+            margin-bottom: 0px;
+        }
+
+        .auto-style12 {
+            height: 41px;
+            width: 589px;
+            text-align: left;
+        }
+
+        .auto-style13 {
+            text-decoration: none;
+        }
+
+        .auto-style14 {
+            font-size: large;
+        }
+
+        .auto-style15 {
+            width: 1329px;
+        }
+        .auto-style16 {
+            height: 41px;
+            width: 499px;
+            text-align: right;
+            font-size: large;
+        }
+        .auto-style17 {
+            height: 41px;
+            text-align: right;
+            width: 134px;
+        }
+        .auto-style18 {
+            color: #333333;
+        }
+    </style>
+</head>
+<body style="height: 271px; width: 1460px;">
+    <form id="form1" runat="server" class="auto-style15">
+
+        <asp:Image ID="Image1" runat="server" CssClass="auto-style8" Height="274px" Width="1330px" ImageUrl="~/images/aaa.jpg" />
+
+        <table class="auto-style1" style="border-collapse: collapse; border-spacing: inherit; clip: rect(auto, auto, auto, auto); font-family: 'times New Roman', Times, serif; font-size: 17px; color: #FFFFFF; font-style: italic;">
+            <tr>
+                <td class="auto-style12"><a href="Hakkinda.aspx" class="auto-style13" style="font-family: 'Times New Roman', Times, serif; font-size: large; font-style: italic; color: #FFFFFF">&nbsp; Sayfaların Arasında</a></td>
+                <td class="auto-style16"><a href="Yorumlar.aspx" class="auto-style13" style="font-family: 'Times New Roman', Times, serif; font-size: large; font-style: italic; color: #FFFFFF">Yorumlar</a></td>
+                <td class="auto-style17"><a href="YorumYap.aspx" class="auto-style13" style="font-family: 'times New Roman', Times, serif; font-size: large; font-style: italic; color: #FFFFFF;">Yorum Ya</a><span class="auto-style14">p </span>&nbsp;&nbsp;&nbsp; </td>
+                <td class="auto-style5"><a href="AnaSayfa.aspx" class="auto-style13" style="font-family: 'Times New Roman', Times, serif; font-size: large; font-style: italic; color: #FFFFFF">Kitaplar&nbsp;&nbsp;&nbsp;&nbsp; </td></a>
+            </tr>
+        </table>
+        <div style="background-color: #C0C0C0">
+            <div style="display: flex; justify-content: flex-start; height: auto; width: %100" class="auto-style7">
+
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="DataList1_SelectedIndexChanged" BackColor="#CCCCCC" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="175px" Height="196px" Font-Bold="False" Font-Italic="True" Font-Names="Times New Roman" Font-Overline="False" Font-Size="Small" Font-Strikeout="False" Font-Underline="False">
+                    <FooterStyle BackColor="#C0C0C0" ForeColor="Black" Font-Names="Times New Roman" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" Font-Names="Yu Gothic UI Semilight" />
+                    <ItemTemplate>
+                        <div style="margin-top:3px">
+                            <a href="CategoryDetails.aspx?CategoryID=<%#Eval("CategoryID")%>" class="auto-style13">
+                                <asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' CssClass="auto-style18" /></a>
+                            <span class="auto-style18">(
+                            <asp:Label ID="NumberOfCategoriesLabel" runat="server" Text='<%# Eval("NumberOfCategories") %>' />
+                            </span>)<br />
+                            <br />
+                        </div>
+                    </ItemTemplate>
+                    <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                </asp:DataList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BooksDBConnectionString %>" SelectCommand="SELECT [CategoryName], [NumberOfCategories], [CategoryID] FROM [Tbl_Categories]"></asp:SqlDataSource>
+
+
+
+
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
+
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
